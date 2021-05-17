@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\TesteLuizaLabs.Api.xml</DocumentationFile>
+    <OutputPath>bin</OutputPath>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <None Update="Templates\cadastro.html" CopyToOutputDirectory="PreserveNewest"/>
+    <None Update="Templates\recuperacao_senha.html" CopyToOutputDirectory="PreserveNewest"/>
+    <None Update="Templates\senha_alterada.html" CopyToOutputDirectory="PreserveNewest"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3"/>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1"/>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.6"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.6"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.6"/>
+    <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TesteLuizaLabs.Lib\TesteLuizaLabs.Lib.csproj"/>
+    <ProjectReference Include="..\TesteLuizaLabs.Aplicacao\TesteLuizaLabs.Aplicacao.csproj"/>
+  </ItemGroup>
+</Project>

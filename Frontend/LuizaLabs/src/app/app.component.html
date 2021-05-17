@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="usuario">
+    <div class="collapse navbar-collapse justify-content-between" id="navbar">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" (click)="logout()">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<div class="app-container" [ngClass]="{ 'bg-light': usuario }">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>
